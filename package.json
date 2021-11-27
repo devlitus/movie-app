@@ -1,0 +1,33 @@
+{
+  "name": "movie-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://devlitus@bitbucket.org/devlitus/movie-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://bitbucket.org/devlitus/movie-app/issues"
+  },
+  "homepage": "https://bitbucket.org/devlitus/movie-app#readme",
+  "devDependencies": {
+    "eslint": "^8.2.0",
+    "eslint-config-google": "^0.14.0"
+  },
+  "dependencies": {
+    "firebase": "^9.5.0",
+    "sweetalert2": "^11.2.0"
+  },
+  "exports":{
+    ".": "./main.js",
+    "./node_modules/": "./node_modules"
+  }
+}

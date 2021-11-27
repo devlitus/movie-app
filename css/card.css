@@ -1,0 +1,36 @@
+.movie-popular {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  justify-items: center;
+  align-items: center;
+  row-gap: 20px;
+}
+.movie-card {
+  width: calc(100% - 2rem);
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  
+}
+.movie-card img {
+  border-radius: 20px;
+  width: calc(100% - 2rem);
+}
+.movie-card-info {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.movie-card-info div {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.movie-card-info i{
+  font-size: 14px;
+  margin-right: .5rem;
+}

@@ -1,0 +1,18 @@
+#footer {
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  background-color: var(--primary-color);
+}
+#footer ul {
+  list-style: none;
+}
+.navbar {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  border-top: 1px solid var(--secondary-color);
+}
