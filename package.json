@@ -13,20 +13,17 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://bitbucket.org/devlitus/movie-app/issues"
-  },
-  "homepage": "https://bitbucket.org/devlitus/movie-app#readme",
+  "license": "MIT",
   "devDependencies": {
     "eslint": "^8.2.0",
     "eslint-config-google": "^0.14.0"
   },
   "dependencies": {
     "firebase": "^9.5.0",
+    "rxjs": "^7.4.0",
     "sweetalert2": "^11.2.0"
   },
-  "exports":{
+  "exports": {
     ".": "./main.js",
     "./node_modules/": "./node_modules"
   }

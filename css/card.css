@@ -1,3 +1,10 @@
+.movie-card-info-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.5rem;
+}
 .movie-popular {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
