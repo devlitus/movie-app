@@ -1,35 +1,53 @@
-import {loginUser, loginGoogle} from './services/login.js';
-
+import { loginWithEmailAndPassword, loginGoogle } from "./services/login.js";
 // const form = document.getElementById('form').elements;
-const btn = document.getElementById('btn');
-const btnGoogle = document.querySelector('.btn-google');
+const btn = document.getElementById("btn");
+const btnGoogle = document.querySelector(".btn-google");
 
-
-btn.addEventListener('click', async (e) => {
-  try {
-    e.preventDefault();
-    const emailInput = document.getElementById('email').value;
-    const password = document.getElementById('pass').value;
-    const user = await loginUser(emailInput, password);
-    const {email} = user.user;
-    if (email === 'test@test.com') {
+btn.addEventListener(
+  "click",
+  async (e) => {
+    try {
+      e.preventDefault();
+      const emailInput = document.getElementById("email").value;
+      const password = document.getElementById("pass").value;
+      const user = await loginWithEmailAndPassword(emailInput, password);
+      const { email } = user.user;
+      if (email === "test@test.com") {
+        Swal.fire({
+          title: "Welcome",
+          icon: "success",
+        }).then(() => {
+          window.location.href = "./movie.html";
+        });
+      }
+    } catch (error) {
       Swal.fire({
-        title: 'Welcome',
-        icon: 'success',
-      }).then(() => {
-        window.location.href = './movie.html';
+        title: "Error en el login",
+        icon: "error",
       });
+      console.log(error);
     }
-  } catch (error) {
-    console.log(error);
-  }
-}, false);
+  },
+  false
+);
 
-btnGoogle.addEventListener('click', (e) => {
+btnGoogle.addEventListener("click", (e) => {
   try {
     e.preventDefault();
-    loginGoogle();
+    loginGoogle().then((user) => {
+      user &&
+        Swal.fire({
+          title: "Welcome",
+          icon: "success",
+        }).then(() => {
+          window.location.href = "./movie.html";
+        });
+    });
   } catch (error) {
+    Swal.fire({
+      title: "Error en el login",
+      icon: "error",
+    });
     console.log(error);
   }
 });

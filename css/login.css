@@ -1,13 +1,12 @@
 .login {
   width: 100vw;
   height: 100vh;
-  /* margin-top: 4rem; */
+  margin-top: 4rem;
   display: flex;
   flex-flow: column nowrap;
   justify-content: start;
   align-items: center;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
-  
 }
 .login-input {
   display: flex;
@@ -18,7 +17,7 @@
 .label-input {
   position: relative;
   left: 1.2rem;
-  bottom: .5rem;
+  bottom: 0.5rem;
 }
 .label-input:first-child {
   margin-top: 1rem;
@@ -30,10 +29,11 @@
   border-radius: 20px;
   border: 1px solid var(--secondary-color);
   font-size: calc(var(--font-size) * 1.5);
-  margin-bottom: .4rem;
+  margin-bottom: 0.4rem;
   text-align: center;
 }
 .login button {
+  max-width: 20rem;
   width: calc(100% - 5rem);
   height: 3rem;
   background-color: var(--secondary-color);
