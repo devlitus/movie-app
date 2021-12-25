@@ -1,17 +1,11 @@
-import {getMoviesPopular} from './services/movies.js';
-
+import { getMoviesPopular } from "./services/movies.js";
+const listMovies = [];
 const getMovies = async () => {
   const movies = await getMoviesPopular();
-  movies.map((movie) => {
-    const {
-      title,
-      overview,
-      poster_path,
-      vote_average,
-      release_date,
-    } = movie;
-    const movieCard = document.createElement('div');
-    movieCard.classList.add('movie-card');
+  const movie = movies.map((movie) => {
+    const { title, poster_path, vote_average, release_date } = movie;
+    const movieCard = document.createElement("div");
+    movieCard.classList.add("movie-card");
     movieCard.innerHTML = `
       <img src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">
       <div class="movie-card-title">
@@ -25,7 +19,8 @@ const getMovies = async () => {
         </div>
       </div>
     `;
-    document.getElementById('movies').appendChild(movieCard);
+    document.getElementById("movies").appendChild(movieCard);
   });
+  listMovies.push(movie);
 };
 getMovies();
