@@ -4,6 +4,7 @@
 @import url("./login.css");
 @import url("./search.css");
 @import url("./card.css");
+
 :root {
   --primary-color: #1f1d36;
   --secondary-color: #864879;
@@ -27,5 +28,4 @@ i {
   font-size: 1.5em;
   color: var(--color);
 }
-.wrapper {
-}
+

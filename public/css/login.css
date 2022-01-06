@@ -1,12 +1,15 @@
 .login {
   width: 100vw;
-  height: 100vh;
-  margin-top: 4rem;
+  /* height: 93vh; */
+  margin: 4rem auto;
   display: flex;
   flex-flow: column nowrap;
   justify-content: start;
   align-items: center;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+  /* box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5); */
+}
+.login h2 {
+  margin-bottom: 2rem;
 }
 .login-input {
   display: flex;
@@ -33,7 +36,7 @@
   text-align: center;
 }
 .login button {
-  max-width: 20rem;
+  max-width: 17rem;
   width: calc(100% - 5rem);
   height: 3rem;
   background-color: var(--secondary-color);
@@ -44,5 +47,5 @@
   margin-top: 1rem;
 }
 .btn-google {
-  margin-top: 2rem;
+  margin: 2rem auto;
 }

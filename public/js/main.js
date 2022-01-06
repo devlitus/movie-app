@@ -1,4 +1,4 @@
-import { loginWithEmailAndPassword, loginGoogle } from "./services/login.js";
+import { loginGoogle, loginWithEmailAndPassword } from "./services/login.js";
 // const form = document.getElementById('form').elements;
 const btn = document.getElementById("btn");
 const btnGoogle = document.querySelector(".btn-google");
@@ -17,7 +17,7 @@ btn.addEventListener(
           title: "Welcome",
           icon: "success",
         }).then(() => {
-          window.location.href = "./movie.html";
+          window.location.href = "./movie";
         });
       }
     } catch (error) {
@@ -40,7 +40,7 @@ btnGoogle.addEventListener("click", (e) => {
           title: "Welcome",
           icon: "success",
         }).then(() => {
-          window.location.href = "./movie.html";
+          window.location.href = "/movie";
         });
     });
   } catch (error) {
