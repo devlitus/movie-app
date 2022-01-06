@@ -11,6 +11,7 @@
   --color: #e9a6a6;
   --font-family: "Roboto", sans-serif;
   --font-size: 16px;
+  scrollbar-color: transparent transparent;
 }
 * {
   box-sizing: border-box;
@@ -23,6 +24,7 @@ body {
   font-size: var(--font-size);
   color: var(--color);
   background-color: var(--primary-color);
+  overflow: overlay;
 }
 i {
   font-size: 1.5em;
