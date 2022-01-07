@@ -1,26 +1,33 @@
 import { getMoviesPopular } from "./services/movies.js";
-const listMovies = [];
+
 const getMovies = async () => {
+  const divMovieList = document.getElementById("movies-list");
+  const div = document.createElement("div");
   const movies = await getMoviesPopular();
-  const movie = movies.map((movie) => {
-    const { title, poster_path, vote_average, release_date } = movie;
-    const movieCard = document.createElement("div");
-    movieCard.classList.add("movie-card");
-    movieCard.innerHTML = `
-      <img src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">
-      <div class="movie-card-title">
-        <h1>${title}</h1>
-        <div  class="movie-card-info">
-          <div class="movie-card-info-item">
-            <i class="fa-solid fa-thumbs-up"></i>
-            <p>${vote_average.toFixed(1)}</p>
-          </div>
-          <p>${release_date}</p>
-        </div>
+  movies.forEach((movie) => {
+    const { id, poster_path, title } = movie;
+    div.innerHTML += `
+      <div class="card" data-info="${id}">
+        <img class="card__image" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">
       </div>
     `;
-    document.getElementById("movies").appendChild(movieCard);
+    div.classList.add("wrapper");
+
+    divMovieList.appendChild(div);
   });
-  listMovies.push(movie);
+  div.addEventListener("click", (e) => {
+    if (e.target.parentElement.dataset.info) {
+      const id = e.target.parentElement.dataset.info;
+      if (id) {
+        const path = "detail";
+        window.history.pushState({}, "", `${path}?id=${id}`);
+        location.reload();
+        console.log("success");
+      } else {
+        console.log("errro");
+      }
+    }
+  });
 };
-getMovies();
+
+document.addEventListener("DOMContentLoaded", getMovies);

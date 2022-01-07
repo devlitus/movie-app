@@ -14,7 +14,8 @@ router.get("/search", (req, res) => {
 router.get("/contact", (req, res) => {
   res.sendFile("contact.html", options);
 });
-router.get("/detail", (req, res) => {
+router.get("/detail", (req, res, next) => {
   res.sendFile("detail.html", options);
 });
+
 export { router };
