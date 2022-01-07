@@ -1,4 +1,3 @@
-import { detatilMovie } from "./detail.js";
 import { getMoviesPopular } from "./services/movies.js";
 
 const getMovies = async () => {
@@ -20,7 +19,6 @@ const getMovies = async () => {
     if (e.target.parentElement.dataset.info) {
       const id = e.target.parentElement.dataset.info;
       if (id) {
-        detatilMovie(id);
         const path = "detail";
         window.history.pushState({}, "", `${path}?id=${id}`);
         location.reload();
