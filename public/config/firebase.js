@@ -1,13 +1,10 @@
-
 export const firebaseConfig = {
-  apiKey: 'AIzaSyAJZhUH8S6rtdmyNuGOZA2NF5EWJtjx0PI',
-  authDomain: 'pruebas-7c9a7.firebaseapp.com',
-  databaseURL: 'https://pruebas-7c9a7-default-rtdb.europe-west1.firebasedatabase.app',
-  projectId: 'pruebas-7c9a7',
-  storageBucket: 'pruebas-7c9a7.appspot.com',
-  messagingSenderId: '600205054764',
-  appId: '1:600205054764:web:7c7ed95b77065780f3d289',
+  apiKey: "AIzaSyCJoHxas8wAHO50SKYDhiGSN7cj6iUlLZg",
+  authDomain: "pruebas-5982e.firebaseapp.com",
+  projectId: "pruebas-5982e",
+  storageBucket: "pruebas-5982e.appspot.com",
+  messagingSenderId: "806574491685",
+  appId: "1:806574491685:web:43e61d6e6d172d6d9257cc",
 };
 
 // Initialize Firebase
-
