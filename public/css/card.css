@@ -17,18 +17,10 @@
 }
 @media screen and (max-width: 600px) {
   .wrapper {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    overflow-y: hidden;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    gap: 2rem;
-    margin: 2rem 1.6rem;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   }
   .card {
-    flex: 1 0 auto;
+    /* flex: 1 0 auto; */
     border-radius: 100%;
   }
   .card__image {
