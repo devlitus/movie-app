@@ -1,12 +1,10 @@
 .login {
-  width: 100vw;
-  /* height: 93vh; */
+  max-width: 70vmax;
   margin: 4rem auto;
   display: flex;
   flex-flow: column nowrap;
   justify-content: start;
   align-items: center;
-  /* box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5); */
 }
 .login h2 {
   margin-bottom: 2rem;
@@ -15,7 +13,6 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: start;
-  /* align-items: center; */
 }
 .label-input {
   position: relative;
@@ -32,20 +29,24 @@
   border-radius: 20px;
   border: 1px solid var(--secondary-color);
   font-size: calc(var(--font-size) * 1.5);
-  margin-bottom: 0.4rem;
+  margin-bottom: 1.5rem;
   text-align: center;
 }
-.login button {
-  max-width: 17rem;
-  width: calc(100% - 5rem);
-  height: 3rem;
+.btn {
+  width: 75vw;
+  max-width: 32vmax;
+  margin-top: 1.5rem;
+  padding: 1rem;
   background-color: var(--secondary-color);
-  color: var(--color);
-  border-radius: 20px;
-  border: 1px solid var(--secondary-color);
   font-size: calc(var(--font-size) * 1.5);
-  margin-top: 1rem;
+  color: var(--color);
+  font-weight: 700;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  box-shadow: 1px 1px 3px var(--color);
+  transition: background-color 0.2s ease-in-out;
 }
-.btn-google {
-  margin: 2rem auto;
+.btn:hover {
+  background-color: var(--color);
+  color: var(--secondary-color);
 }
