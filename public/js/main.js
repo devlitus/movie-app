@@ -1,7 +1,7 @@
 import { loginGoogle, loginWithEmailAndPassword } from "./services/login.js";
-// const form = document.getElementById('form').elements;
+
 const btn = document.getElementById("btn");
-const btnGoogle = document.querySelector(".btn-google");
+const btnGoogle = document.getElementById("btn-google");
 
 btn.addEventListener(
   "click",
@@ -12,14 +12,13 @@ btn.addEventListener(
       const password = document.getElementById("pass").value;
       const user = await loginWithEmailAndPassword(emailInput, password);
       const { email } = user.user;
-      if (email === "test@test.com") {
-        Swal.fire({
-          title: "Welcome",
-          icon: "success",
-        }).then(() => {
-          window.location.href = "./movie";
-        });
-      }
+      return Swal.fire({
+        title: `Welcome, ${email}`,
+        icon: "success",
+      }).then(() => {
+        localStorage.setItem("user", email);
+        window.location.href = "./movie";
+      });
     } catch (error) {
       Swal.fire({
         title: "Error en el login",
@@ -35,11 +34,13 @@ btnGoogle.addEventListener("click", (e) => {
   try {
     e.preventDefault();
     loginGoogle().then((user) => {
+      const { displayName } = user;
       user &&
         Swal.fire({
-          title: "Welcome",
+          title: `Welcome ${displayName}`,
           icon: "success",
         }).then(() => {
+          localStorage.setItem("user", displayName);
           window.location.href = "/movie";
         });
     });

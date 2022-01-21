@@ -3,10 +3,15 @@
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   justify-content: center;
   justify-items: center;
+  gap: 1rem;
+}
+.search {
+  display: flex;
+  justify-content: center;
 }
 
 input[type="search"] {
-  width: calc(100% - 2rem);
+  width: calc(100vw / 2);
   height: 40px;
   border: 1px solid var(--secondary-color);
   border-radius: 20px;
@@ -21,6 +26,18 @@ i {
 .search i {
   width: 20px;
   position: relative;
-  top: 4px;
+  top: 24px;
   left: 40px;
 }
+@media screen and (max-width: 600px) {
+  .search {
+    display: block;
+  }
+  input[type="search"] {
+    width: calc(100vw - 3rem);
+  }  
+  .search i {
+    top: 4px
+  }
+}
+  
