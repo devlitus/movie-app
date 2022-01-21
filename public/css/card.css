@@ -9,6 +9,10 @@
 .card {
   border-radius: 0.5rem;
   justify-self: center;
+  transition: all 0.2s ease-in-out;
+}
+.card:hover {
+  transform: translateZ(20px);
 }
 .card__image {
   width: 70%;
