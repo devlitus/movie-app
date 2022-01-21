@@ -1,4 +1,5 @@
 import { getDetailMovie } from "../js/services/movies.js";
+
 const id = window.location.search.split("=")[1];
 
 const detatilMovie = async (id) => {

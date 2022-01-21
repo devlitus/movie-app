@@ -1,6 +1,6 @@
 #movie-detail {
-  margin: 1rem auto;
-  width: calc(100% / 2);
+  margin: 0 auto;
+  max-width: 70%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -18,11 +18,11 @@
   color: var(--secondary-color);
 }
 .card__detail__image {
-  margin: 0 auto;
   width: 100%;
   height: 400px;
-  background-size: cover;
-  background-position: center;
+  object-fit: fill;
+  object-position: center;
+  border-radius: 20px;
 }
 .card__detail__info {
   margin-bottom: 1rem;
@@ -52,7 +52,7 @@
 @media screen and (max-width: 600px) {
   #movie-detail {
     margin: 0;
-    width: 100vw;
+    max-width: 100%;
   }
   .card__detail__image {
     height: 200px;
