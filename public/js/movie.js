@@ -1,4 +1,8 @@
+import { showAvatar } from "./header.js";
 import { getMoviesPopular } from "./services/movies.js";
+
+const user = localStorage.getItem("user");
+showAvatar(user);
 
 const getMovies = async () => {
   const divMovieList = document.getElementById("movies-list");

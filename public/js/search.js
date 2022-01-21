@@ -1,4 +1,7 @@
+import { showAvatar } from "./header.js";
 import { searchMovie } from "./services/movies.js";
+const user = localStorage.getItem("user");
+showAvatar(user);
 
 const search = document.getElementById("search");
 let movieList = [];
@@ -16,21 +19,27 @@ const searchMovieByTitle = async (title) => {
 
 const render = () => {
   movieList.forEach((movie) => {
-    const { title, popularity, poster_path } = movie;
-
+    const { id, title, poster_path } = movie;
     const movieCard = document.createElement("div");
-    movieCard.classList.add("movie-card");
+    movieCard.classList.add("card");
+    movieCard.dataset.info = id;
     movieCard.innerHTML = `
-      <img src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">
-      <div class="movie-card-info">
-        <p>${title}</p>
-        <div class="movie-card-subinfo">
-          <i class="fa-solid fa-star"></i>
-          <p>${popularity.toFixed(0)}</p>
-          </div>
-      </div>
+    <img class="card__image" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}">
     `;
     document.getElementById("content-search").appendChild(movieCard);
+    movieCard.addEventListener("click", (e) => {
+      if (e.target.parentElement.dataset.info) {
+        const id = e.target.parentElement.dataset.info;
+        if (id) {
+          const path = "detail";
+          window.history.pushState({}, "", `${path}?id=${id}`);
+          location.reload();
+          console.log("success");
+        } else {
+          console.log("errro");
+        }
+      }
+    });
   });
 };
 
