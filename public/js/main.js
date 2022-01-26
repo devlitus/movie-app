@@ -3,36 +3,31 @@ import { loginGoogle, loginWithEmailAndPassword } from "./services/login.js";
 const btn = document.getElementById("btn");
 const btnGoogle = document.getElementById("btn-google");
 
-btn.addEventListener(
-  "click",
-  async (e) => {
-    try {
-      e.preventDefault();
-      const emailInput = document.getElementById("email").value;
-      const password = document.getElementById("pass").value;
-      const user = await loginWithEmailAndPassword(emailInput, password);
-      const { email } = user.user;
-      return Swal.fire({
-        title: `Welcome, ${email}`,
-        icon: "success",
-      }).then(() => {
-        localStorage.setItem("user", email);
-        window.location.href = "./movie";
-      });
-    } catch (error) {
-      Swal.fire({
-        title: "Error en el login",
-        icon: "error",
-      });
-      console.log(error);
-    }
-  },
-  false
-);
-
-btnGoogle.addEventListener("click", (e) => {
+const submitLoginWithEmailAndPassword = async () => {
   try {
-    e.preventDefault();
+    const emailInput = document.getElementById("email").value;
+    const password = document.getElementById("pass").value;
+
+    const user = await loginWithEmailAndPassword(emailInput, password);
+    const { email } = user.user;
+    return Swal.fire({
+      title: `Welcome, ${email}`,
+      icon: "success",
+    }).then(() => {
+      localStorage.setItem("user", email);
+      window.location.href = "./movie";
+    });
+  } catch (error) {
+    Swal.fire({
+      title: "Error ",
+      text: "email or password incorrect",
+      icon: "error",
+    });
+    console.log(error);
+  }
+};
+const submitLoginGoogle = async () => {
+  try {
     loginGoogle().then((user) => {
       const { displayName } = user;
       user &&
@@ -47,8 +42,12 @@ btnGoogle.addEventListener("click", (e) => {
   } catch (error) {
     Swal.fire({
       title: "Error en el login",
+      text: "Google provider fails",
       icon: "error",
     });
     console.log(error);
   }
-});
+};
+
+btn.addEventListener("click", submitLoginWithEmailAndPassword, false);
+btnGoogle.addEventListener("click", submitLoginGoogle, false);
