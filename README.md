@@ -20,4 +20,7 @@ npm run dev
 ```
 npm run start
 ```
-Abre el navegado en esta url http://localhost:8080/
+Abre el navegado en esta url http://localhost:8080/  
+### Test del login
+email: test@test.com  
+password: 123456
